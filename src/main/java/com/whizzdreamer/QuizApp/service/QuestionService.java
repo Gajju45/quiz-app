@@ -14,10 +14,15 @@ public class QuestionService {
     QuestionRepository questionRepository;
 
     public List<Question> getAllQuestions() {
+
         return questionRepository.findAll();
     }
     public List<Question> getQuestionByCategory(String category){
         return questionRepository.findByCategory(category);
+    }
+    public void addQuestions(Question question){
+        questionRepository.save(question);
+
     }
 }
 
